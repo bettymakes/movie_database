@@ -5,7 +5,18 @@ movies = {
 	movieName3: 4
 }
 
-puts "Yo Coose something!"
+#Greet user, and prompt them to choose an option
+puts "Greetings Earthling!"
+puts "Welcome to Film Reviews R Us"
+puts
+puts "Choose one of the following options:"
+puts "Type 'add' to add a movie to the database"
+puts "Type 'update' to update a rating on an existing movie"
+puts "Type 'display' to display all the movies and their corresponding ratings in the database"
+puts "Type 'delete' to remove a movie from the database"
+puts 
+puts "-----------------------------------------------------------------------"
+puts "Input below: "
 choice = gets.chomp.downcase
 
 case choice
