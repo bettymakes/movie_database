@@ -1,12 +1,19 @@
 =begin
 	BUGS FOUND!
-	1) when adding a movie with the same title, no error shows up. 
+	1) FIXED!! when adding a movie with the same title, no error shows up. 
 	   also, the new input is not added to the hash
+			- Technically, it was working. However, my flow was the issue.
+			- I put "enter movie name" and put "enter rating" before checking if movie existed
+			- The error did show up after saying "this already exists", 
+			- but because the UI is so messy, I didn't notice the "already exists" message
+			- Revised the code so that you will only be prompted to rate the movie,
+			- if the movie doesn't already exit. Else, you'll get the error right away
 
 	2) FIXED!! when updating a movie, the original movie is not updated,
 	   instead, it just creates an additional entry for the movie.
-	     - in the update code, I didn't convert the user's movie name input into a symbol
+	     - I didn't convert the user's movie name input into a symbol
 	     - I also didn't convert their ratings value into an Integer
+	     - This has been revised, bug fixed
 
 	Items to improve:
 	1) Fix the UI so that it's easier to read for the user
@@ -48,12 +55,12 @@ loop do
 	  when "add"
 	  puts "What movie you wanna add?"
   	title = gets.chomp
-	  puts "Rate it!"
-	  rating = gets.chomp
 	
 		  if movies[title.to_sym].nil?
+		  	puts "Rate it!"
+	  		rating = gets.chomp
 			  movies[title.to_sym] = rating.to_i
-			  puts "It's been added yo"
+			  puts "It's been added yo!"
 		  else
 		  	puts "This already exists son!"
 	  	end
