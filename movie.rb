@@ -1,3 +1,13 @@
+=begin
+	BUGS FOUND!
+	1) when adding a movie with the same title, no error shows up. 
+	   also, the new input is not added to the hash
+
+	2) when updating a movie, the original movie is not updated,
+	   instead, it just creates an additional entry for the movie.
+=end
+
+
 #Test hash of movie titles and ratings
 movies = {
 	movieName1: 3,
