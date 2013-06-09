@@ -3,9 +3,18 @@
 	1) when adding a movie with the same title, no error shows up. 
 	   also, the new input is not added to the hash
 
-	2) when updating a movie, the original movie is not updated,
+	2) FIXED!! when updating a movie, the original movie is not updated,
 	   instead, it just creates an additional entry for the movie.
+	     - in the update code, I didn't convert the user's movie name input into a symbol
+	     - I also didn't convert their ratings value into an Integer
+
+	Items to improve:
+	1) Fix the UI so that it's easier to read for the user
+		 Needs a better separation between the prompt, the returned values, and the user input
+
 =end
+
+
 
 
 #Test hash of movie titles and ratings
@@ -57,7 +66,7 @@ loop do
   		else
   			puts "Rate it now!"
   			rating = gets.chomp
-  			movies[update_title] = rating
+  			movies[update_title.to_sym] = rating.to_i
   		end    
 	
   	when "display"
